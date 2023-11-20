@@ -10,9 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_20_114412) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_20_132658) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "offers", force: :cascade do |t|
+    t.text "description"
+    t.integer "quantity"
+    t.float "unit_price"
+    t.bigint "user_id", null: false
+    t.string "picture"
+    t.text "pickup_instructions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.time "pickup_time_start"
+    t.time "pickup_time_end"
+    t.index ["user_id"], name: "index_offers_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "offer_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["offer_id"], name: "index_orders_on_offer_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_114412) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "offers", "users"
+  add_foreign_key "orders", "offers"
+  add_foreign_key "orders", "users"
 end
