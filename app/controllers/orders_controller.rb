@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-
+    # I will need to know who the user is to show all of his/her orders
   end
 
   def show
@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    # I will need to know who the user is to link the new order to him/her
     @order = Order.new(order_params)
     @order.offer = @restaurant
     @order.save
