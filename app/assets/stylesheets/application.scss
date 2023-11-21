@@ -10,5 +10,235 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "./components/footer";
 
+/* app/assets/stylesheets/application.css */
+
+.custom-sign-up-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-sign-up-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.custom-sign-up-form .form-inputs {
+  margin-bottom: 20px;
+}
+
+.custom-sign-up-form .form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.custom-sign-up-form input[type="text"],
+.custom-sign-up-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.custom-sign-up-form .btn-submit {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.custom-sign-up-form .btn-submit:hover {
+  background-color: #0056b3;
+}
+
+.custom-sign-up-form .alert {
+  margin-top: 10px;
+}
+
+.custom-sign-up-form .alert-danger {
+  color: #ff0000;
+}
+
+/* Additional styles for links if needed */
+
+/* app/assets/stylesheets/application.css */
+
+.custom-login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-login-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.custom-login-form .form-inputs {
+  margin-bottom: 20px;
+}
+
+.custom-login-form .input-group {
+  margin-bottom: 15px;
+}
+
+.custom-login-form .form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.custom-login-form input[type="text"],
+.custom-login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.custom-login-form .btn-submit {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.custom-login-form .btn-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles for links if needed */
+
+/* app/assets/stylesheets/application.css */
+
+.custom-change-password-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-change-password-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.custom-change-password-form .form-inputs {
+  margin-bottom: 20px;
+}
+
+.custom-change-password-form .input-group {
+  margin-bottom: 15px;
+}
+
+.custom-change-password-form .form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.custom-change-password-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.custom-change-password-form .btn-submit {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.custom-change-password-form .btn-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles for links if needed */
+
+/* app/assets/stylesheets/application.css */
+
+.custom-forgot-password-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-forgot-password-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.custom-forgot-password-form .form-inputs {
+  margin-bottom: 20px;
+}
+
+.custom-forgot-password-form .input-group {
+  margin-bottom: 15px;
+}
+
+.custom-forgot-password-form .form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.custom-forgot-password-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.custom-forgot-password-form .btn-submit {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.custom-forgot-password-form .btn-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles for links if needed */
+=======
+@import "./components/footer";
