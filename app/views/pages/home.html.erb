@@ -1,6 +1,8 @@
 <h1>Welcome to EcoBites</h1>
 
 
-<%= link_to "Sign up", new_user_registration_path %>
-<%= link_to "Sign in", new_user_session_path %>
-<%= link_to "See all offers", offers_path %>
+<%= button_to "Sign up", new_user_registration_path, class: "btn btn-primary m-2" %>
+<%= button_to "Sign in", new_user_session_path, class: "btn btn-secondary m-2" %>
+
+
+<%= button_to "See all offers", offers_path, class: "btn btn-success m-2" %>
