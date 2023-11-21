@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   def index
     # I will need to know who the user is to show all of his/her orders
+    @user = current_user
+    @orders = @user.orders
   end
 
   def show
