@@ -8,6 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require 'json'
+require 'open-uri'
+
 puts "Resetting the database..."
 
 User.destroy_all
@@ -30,70 +33,87 @@ sleep(0.2)
 
 puts "Generating offers..."
 
-Offer.create!(
+starbucks = Offer.create!(
   shop: "Starbucks",
   title: "Surprise bag",
   description: "Let's keep it a surprise ey? But trust me, you'll get only good stuff.",
   quantity: 10,
   unit_price: 4.99,
   user_id: User.first.id,
-  picture: "../app/assets/images/starbucks.jpeg",
   pickup_instructions: "Please pick up at counter at given time",
   pickup_time_start: Time.parse("5:00 PM"),
   pickup_time_end: Time.parse("7:00 PM")
 )
 
-Offer.create!(
+starbucks_url = "https://tb-static.uber.com/prod/image-proc/processed_images/cb7ff9b7adeaee690bff94efc220c343/16bb0a3ab8ea98cfe8906135767f7bf4.jpeg"
+starbucks_file = URI.open(starbucks_url)
+starbucks.photo.attach(io: starbucks_file, filename: 'starbucks_img.jpeg', content_type: 'image/png')
+
+dunkin_donuts = Offer.create!(
   shop: "Dunkin' Donuts",
   title: "Huge box of donuts",
   description: "A box of 12 different donuts - expect different flavors, and maximum pleasure",
   quantity: 15,
   unit_price: 5.99,
   user_id: 2,
-  picture: "../app/assets/images/donuts.jpeg",
   pickup_instructions: "Please pick up at counter at given time",
   pickup_time_start: Time.parse("4:00 PM"),
   pickup_time_end: Time.parse("5:00 PM")
 )
 
-Offer.create!(
+dunkin_donuts_url = "https://hungryforhalaal.co.za/wp-content/uploads/2016/10/Dunkin-Donuts-Hungry-for-halaal-14.jpg"
+dunkin_donuts_file = URI.open(dunkin_donuts_url)
+dunkin_donuts.photo.attach(io: dunkin_donuts_file, filename: 'dunkin_donuts_img.jpeg', content_type: 'image/png')
+
+
+baker = Offer.create!(
   shop: "Le boulanger fraçais",
   title: "Mistery box",
   description: "A variety of delicious french pastries",
   quantity: 8,
   unit_price: 7.99,
   user_id: 3,
-  picture: "../app/assets/images/donuts.jpeg",
   pickup_instructions: "Please pick up at counter at given time",
   pickup_time_start: Time.parse("4:00 PM"),
   pickup_time_end: Time.parse("5:00 PM")
 )
 
-Offer.create!(
+bakery_url = "https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179"
+bakery_file = URI.open(bakery_url)
+baker.photo.attach(io: bakery_file, filename: 'bakery_img.jpeg', content_type: 'image/png')
+
+
+gatsu = Offer.create!(
   shop: "Gatsu Gatsu",
   title: "Poke bowl",
   description: "A medium-sized poke bowl - might be tuna, salmon or chicken",
   quantity: 20,
   unit_price: 7.99,
   user_id: 4,
-  picture: "../app/assets/images/poke-bowl.jpeg",
   pickup_instructions: "Please pick up at counter at given time",
   pickup_time_start: Time.parse("5:00 PM"),
   pickup_time_end: Time.parse("6:30 PM")
 )
 
-Offer.create!(
+gatsu_url = "https://images.themodernproper.com/billowy-turkey/production/posts/2021/Poke-Bowl-11.jpeg?w=960&h=960&q=82&fm=jpg&fit=crop&dm=1644553103&s=e3d80debf17159866b52147db4167ef7"
+gatsu_file = URI.open(gatsu_url)
+gatsu.photo.attach(io: gatsu_file, filename: 'gatsu_img.jpeg', content_type: 'image/png')
+
+veggie = Offer.create!(
   shop: "Veggie Deluxe",
   title: "Homemade ceasar salad",
   description: "Delicious caesar salad with chicken, croutons and homemade dressing",
   quantity: 12,
   unit_price: 3.99,
   user_id: 4,
-  picture: "../app/assets/images/ceasar_salad.jpeg",
   pickup_instructions: "Please pick up at counter at given time",
   pickup_time_start: Time.parse("6:00 PM"),
   pickup_time_end: Time.parse("7:30 PM")
 )
+
+veggie_url = "https://hips.hearstapps.com/hmg-prod/images/chicken-caesar-salad7-1654809005.jpg?crop=0.588xw:0.880xh;0.0497xw,0.120xh&resize=1200:*"
+veggie_file = URI.open(veggie_url)
+veggie.photo.attach(io: veggie_file, filename: 'veggie_img.jpeg', content_type: 'image/png')
 
 puts "Succesfully generated #{Offer.all.length} offers"
 
