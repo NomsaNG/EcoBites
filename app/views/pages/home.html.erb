@@ -1,82 +1,233 @@
-<h1>Welcome to EcoBites</h1>
+<div class="container">
+  <h1>Welcome to EcoBites</h1>
 
-
-<%= button_to "Sign up", new_user_registration_path, class: "btn btn-primary m-2" %>
-<%= button_to "Sign in", new_user_session_path, class: "btn btn-secondary m-2" %>
-
-<%= button_to "See all offers", offers_path, class: "btn btn-success m-2" %>
-
-<% if user_signed_in? %>
-    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger", style: "float: right; margin-right: 10px;" %>
-<% end %>
-
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="card" style="width: 18rem;">
-        <div class="wrapper">
-          <img class="card-img-top" src="..." alt="Card image cap">
-        </div>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="card" style="width: 18rem;">
-        <div class="wrapper">
-          <img class="card-img-top" src="..." alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="card" style="width: 18rem;">
-        <div class="wrapper">
-          <img class="card-img-top" src="..." alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-        <div class="card" style="width: 18rem;">
-          <div class="wrapper"><img class="card-img-top" src="..." alt="Card image cap"></div>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-      <div class="card" style="width: 18rem;">
-        <div class="wrapper">
-          <img class="card-img-top" src="..." alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
+  <div class="button">
+    <%= button_to "Sign up", new_user_registration_path, class: "btn btn-primary m-2" %>
+    <%= button_to "Sign in", new_user_session_path, class: "btn btn-secondary m-2" %>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+
+
+  <% if user_signed_in? %>
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger", style: "float: right; margin-right: 10px;" %>
+  <% end %>
+
+  <h2>Hot deals <i class="fas fa-fire"></i></h2>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+                <p class="card-text">Price</p>
+              <a href="https://www.burgerking.co.za/" class="btn btn-primary">Get this deal</a>
+            </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+            <a href="#" class="btn btn-primary">Get this deal</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+            <a href="#" class="btn btn-primary">Get this deal</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+          <div class="card" style="width: 18rem;">
+            <div class="wrapper"><img class="card-img-top" src="https://www.iaea.org/sites/default/files/styles/original_image_size/public/str7803.jpg?itok=oYsZLbj9" alt="Card image cap"></div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+              <a href="#" class="btn btn-primary">Get this deal</a>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Price</p>
+            <a href="#" class="btn btn-primary">Get this deal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <h2>For you</i></h2>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+                <p class="card-text">Price</p>
+              <a href="#" class="btn btn-primary">Get this deal</a>
+            </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+            <a href="#" class="btn btn-primary">Get this deal</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+            <a href="#" class="btn btn-primary">Get this deal</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+          <div class="card" style="width: 18rem;">
+            <div class="wrapper"><img class="card-img-top" src="https://www.iaea.org/sites/default/files/styles/original_image_size/public/str7803.jpg?itok=oYsZLbj9" alt="Card image cap"></div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+              <a href="#" class="btn btn-primary">Get this deal</a>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Price</p>
+            <a href="#" class="btn btn-primary">Get this deal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <h2>Today's deals</h2>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+                <p class="card-text">Price</p>
+              <a href="#" class="btn btn-primary">Get this deal</a>
+            </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+            <a href="#" class="btn btn-primary">Get this deal</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+            <a href="#" class="btn btn-primary">Get this deal</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+          <div class="card" style="width: 18rem;">
+            <div class="wrapper"><img class="card-img-top" src="https://www.iaea.org/sites/default/files/styles/original_image_size/public/str7803.jpg?itok=oYsZLbj9" alt="Card image cap"></div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+              <a href="#" class="btn btn-primary">Get this deal</a>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+          <div class="wrapper">
+            <img class="card-img-top" src="https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Price</p>
+            <a href="#" class="btn btn-primary">Get this deal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="see-offers-button">
+      <%= button_to "See all offers", offers_path, class: "btn btn-success m-2" %>
+  </div>
 </div>
