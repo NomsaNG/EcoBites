@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_20_132658) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_21_104329) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_132658) do
     t.datetime "updated_at", null: false
     t.time "pickup_time_start"
     t.time "pickup_time_end"
+    t.string "title"
+    t.string "shop"
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
