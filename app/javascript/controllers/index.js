@@ -10,3 +10,21 @@ eagerLoadControllersFrom("controllers", application)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
 
+// const carouselWidth = $('.carousel-inner')[0].scrollWidth;
+// const cardWidth = $('.carousel-item').width();
+
+// let scrollPosition = 0;
+
+// $('.carousel-control-next').on('click', function(){
+//   console.log('next');
+//   scrollPosition = scrollPosition + cardWidth;
+//   $('.carousel-inner').animate({scrollLeft: scrollPosition}, 600);
+// });
+
+// $('.carousel-control-prev').on('click', function(){
+//   console.log('prev');
+//   scrollPosition = scrollPosition - cardWidth;
+//   $('.carousel-inner').animate({scrollLeft: scrollPosition}, 600);
+// });
+
+
