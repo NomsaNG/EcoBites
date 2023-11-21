@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show]
+  before_action :authenticate_user!, only: [:new]
 
   def index
     @offers = Offer.all
@@ -9,16 +10,29 @@ class OffersController < ApplicationController
   end
 
   def new
-    @offer = Offer.new
+    if user_signed_in?
+      @offer = Offer.new
+    else
+      redirect_to new_user_registration_path, alert: 'Please sign up or sign in to create an offer.'
+    end
   end
 
   def create
+    @offer = Offer.new(offer_params)
+    @offer.user = current_user
+    if @offer.save
+      redirect_to root_path, notice: 'Offer was successfully created.'
+    else
+      render :new
+    end
   end
 
   private
 
   def offer_params
     params.require(:offer).permit(:description, :quantity, :unit_price, :pickup_time_start, :pickup_time_end, :pickup_instructions, :picture)
+    params.require(:offer).permit(:shop, :title, :description, :quantity, :unit_price, :pickup_instructions, :picture)
+
   end
 
   def set_offer

@@ -1,2 +1,35 @@
-<h1>Offers#new</h1>
-<p>Find me in app/views/offers/new.html.erb</p>
+<% #need to determine who's logged in %>
+<% #need to add the picture logic %>
+
+<%= simple_form_for(offer) do |f| %>
+  <%= f.input :shop %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :quantity as: :integer %>
+  <%= f.submit :unit_price, as: :float %>
+  <%= f.submit :pickup_instructions %>
+  <%= f.input :pickup_time_start, as: :time %>
+  <%= f.input :pickup_time_end, as: :time %>
+  <%= f.input :picture, as: :file %>
+<% end %>
+
+
+
+
+
+
+ create_table "offers", force: :cascade do |t|
+    t.text "description"
+    t.integer "quantity"
+    t.float "unit_price"
+    t.bigint "user_id", null: false
+    t.string "picture"
+    t.text "pickup_instructions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.time "pickup_time_start"
+    t.time "pickup_time_end"
+    t.string "title"
+    t.string "shop"
+    t.index ["user_id"], name: "index_offers_on_user_id"
+  end
