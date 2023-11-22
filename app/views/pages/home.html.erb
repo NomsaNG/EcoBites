@@ -20,7 +20,7 @@
   <h2>Hot deals <i class="fas fa-fire"></i></h2>
   <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <% Offer.all.each_with_index do |offer, index| %>
+      <% @offers.each_with_index do |offer, index| %>
         <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
           <div class="card">
             <div class="wrapper">
@@ -31,7 +31,7 @@
                 <h5 class="card-title"><%= offer.title %></h5>
                 <p class="card-text">Price: <%= number_to_currency(offer.unit_price) %></p>
               </div>
-              <%= button_to "Get this deal", offers_path(offer), class: "btn btn-primary m-2" %>
+              <%= link_to "Get this deal", offer_path(offer), class: "btn btn-primary m-2" %>
             </div>
           </div>
         </div>
