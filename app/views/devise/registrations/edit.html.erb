@@ -35,6 +35,11 @@
         <%= f.password_field :current_password, hint: "We need your current password to confirm your changes", required: true, autocomplete: "current-password", class: "form-control" %>
       </div>
 
+      <div class="form-group">
+        <%= f.label :address, "Address of your shop (optional)", class: "d-block" %>
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
+
       <div class="form-actions">
         <%= f.button :submit, "Update", class: "btn btn-primary" %>
       </div>
