@@ -10,3 +10,23 @@ eagerLoadControllersFrom("controllers", application)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
 
+
+// Path: app/javascript/controllers/application.js
+
+$(document).ready(function() {
+  const itemWidth = $('.carousel-item').outerWidth(true);
+
+  $('.carousel-control-next').click(function(e) {
+    e.preventDefault();
+    $('.carousel-inner').animate({
+      scrollLeft: '+=' + itemWidth
+    }, 800);
+  });
+
+  $('.carousel-control-prev').click(function(e) {
+    e.preventDefault();
+    $('.carousel-inner').animate({
+      scrollLeft: '-=' + itemWidth
+    }, 800);
+  });
+});

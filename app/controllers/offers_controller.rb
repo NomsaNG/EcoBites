@@ -30,9 +30,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:description, :quantity, :unit_price, :pickup_time_start, :pickup_time_end, :pickup_instructions, :picture)
-    params.require(:offer).permit(:shop, :title, :description, :quantity, :unit_price, :pickup_instructions, :picture)
-
+    params.require(:offer).permit(:shop, :title, :description, :quantity, :unit_price, :pickup_instructions, :photo, :pickup_time_start, :pickup_time_end)
   end
 
   def set_offer
