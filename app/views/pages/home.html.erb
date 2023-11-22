@@ -1,16 +1,18 @@
 <div class="container">
   <h1>Welcome to EcoBites</h1>
 
-  <div class="button">
-    <%= button_to "Sign up", new_user_registration_path, class: "btn btn-primary m-2" %>
-    <%= button_to "Sign in", new_user_session_path, class: "btn btn-secondary m-2" %>
+  <!--<div class="button">-->
+    <%#= button_to "Sign up", new_user_registration_path, class: "btn btn-primary m-2" %>
+    <%#= button_to "Sign in", new_user_session_path, class: "btn btn-secondary m-2" %>
+    <%#= button_to "My Orders", orders_path, class: "btn btn-secondary m-2" %>
+<!--
   </div>
 
 
-  <% if user_signed_in? %>
-      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger", style: "float: right; margin-right: 10px;" %>
-  <% end %>
-
+  <%# if user_signed_in? %>-->
+      <%#= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger", style: "float: right; margin-right: 10px;" %>
+  <%# end %>
+<!---->
   <h2>Hot deals <i class="fas fa-fire"></i></h2>
   <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -23,8 +25,8 @@
               <div> <h5 class="card-title">Card title</h5>
                   <p class="card-text">Price</p>
               </div>
-              <a href="https://www.burgerking.co.za/" class="button-offer btn-primary">Get this deal</a>
-            </div>
+              <%= button_to "Get this deal", offers_path, class: "btn btn-primary m-2" %>
+           </div>
         </div>
       </div>
       <div class="carousel-item">
@@ -92,7 +94,7 @@
   </a>
   </div>
 
-  
+
 
   <div class="see-offers-button">
       <%= button_to "See all offers", offers_path, class: "btn btn-success m-2" %>
