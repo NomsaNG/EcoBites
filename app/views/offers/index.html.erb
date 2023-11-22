@@ -1,11 +1,12 @@
 <div class="container">
   <h1>Offers</h1>
   <% @offers.each do |offer| %>
-    <div class="card m-1 text-center">
+    <div class="card-body m-1 text-center">
     <img class="offers-card-img" src="" alt="Card image cap">
     <p>Offer: <%= offer.title %></p>
     <p>Shop: <%= offer.shop %></p>
     <p>Price: <%= number_to_currency(offer.unit_price) %></p>
+    <button class="button-offer btn-primary">Get this deal</button>
     </div>
   <% end %>
     <%= link_to "Back to top", "/offers", class: "btn btn-primary text-center p-1"%>

@@ -14,10 +14,8 @@ class OrdersController < ApplicationController
     # I will need to know who the user is to link the new order to him/her
     @order = Order.new(order_params)
     @order.offer = Offer.find(params[:offer_id])
-    if @order.save
-      redirect_to root_path
-    else
-      render :new
+    @order.save
+    redirect_to root_path
   end
 
   def destroy
