@@ -23,9 +23,14 @@ sleep(0.2)
 
 puts "Generating users..."
 
-5.times do |i|
-  User.create!(email: "user#{i + 1}@gmail.com", password: 'password123', password_confirmation: 'password123')
-end
+
+User.create!(email: "user1@gmail.com", password: 'password123', password_confirmation: 'password123', address: '97 Durham Avenue, Cape Town')
+User.create!(email: "user2@gmail.com", password: 'password123', password_confirmation: 'password123', address: '116 Loop Street, Cape Town')
+User.create!(email: "user3@gmail.com", password: 'password123', password_confirmation: 'password123', address: '34 Wale Street, Cape Town')
+User.create!(email: "user4@gmail.com", password: 'password123', password_confirmation: 'password123', address: '3 Park Road, Cape Town')
+User.create!(email: "user5@gmail.com", password: 'password123', password_confirmation: 'password123', address: '1 Kloof Street, Cape Town')
+User.create!(email: "user6@gmail.com", password: 'password123', password_confirmation: 'password123')
+
 
 puts "Succesfully generated #{User.all.length} users"
 
@@ -42,7 +47,7 @@ starbucks = Offer.create!(
   user_id: User.first.id,
   pickup_instructions: "Please pick up at counter at given time",
   pickup_time_start: Time.parse("5:00 PM"),
-  pickup_time_end: Time.parse("7:00 PM")
+  pickup_time_end: Time.parse("7:00 PM"),
 )
 
 starbucks_url = "https://tb-static.uber.com/prod/image-proc/processed_images/cb7ff9b7adeaee690bff94efc220c343/16bb0a3ab8ea98cfe8906135767f7bf4.jpeg"
@@ -58,7 +63,7 @@ dunkin_donuts = Offer.create!(
   user_id: 2,
   pickup_instructions: "Please pick up at counter at given time",
   pickup_time_start: Time.parse("4:00 PM"),
-  pickup_time_end: Time.parse("5:00 PM")
+  pickup_time_end: Time.parse("5:00 PM"),
 )
 
 dunkin_donuts_url = "https://hungryforhalaal.co.za/wp-content/uploads/2016/10/Dunkin-Donuts-Hungry-for-halaal-14.jpg"
@@ -75,7 +80,7 @@ baker = Offer.create!(
   user_id: 3,
   pickup_instructions: "Please pick up at counter at given time",
   pickup_time_start: Time.parse("4:00 PM"),
-  pickup_time_end: Time.parse("5:00 PM")
+  pickup_time_end: Time.parse("5:00 PM"),
 )
 
 bakery_url = "https://www.snackandbakery.com/ext/resources/images/bakeryproducts.jpg?1432238179"

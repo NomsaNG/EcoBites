@@ -10,6 +10,7 @@
     <%= javascript_importmap_tags %>
     <!-- Add these lines to include Bootstrap and jQuery -->
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.6.0.min.js' %>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
   </head>
 
   <body>
@@ -18,9 +19,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+<<<<<<< HEAD
     <% if user_signed_in? %>
       <% end %>
 
+=======
+>>>>>>> master
     <%= yield %>
 
     <%= render "shared/footer" %>
