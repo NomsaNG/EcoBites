@@ -19,6 +19,11 @@
                   required: true,
                   input_html: { autocomplete: "new-password" },
                   label_html: { class: "form-label" } %>
+      <%= f.input :address,
+                  autofocus: true,
+                  input_html: { autocomplete: "Address of your shop (optional)" },
+                  label: "Address of your shop (optional)",
+                  label_html: { class: "form-label" } %>
     </div>
 
     <div class="form-actions">
