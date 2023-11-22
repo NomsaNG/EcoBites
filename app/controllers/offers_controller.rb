@@ -11,11 +11,16 @@ class OffersController < ApplicationController
 
   def new
     if user_signed_in?
-      @offer = Offer.new
+      if current_user.address.present?
+        @offer = Offer.new
+      else
+        redirect_to edit_user_registration_path, alert: 'Please add an address to your shop to be able to create an offer.'
+      end
     else
       redirect_to new_user_registration_path, alert: 'Please sign up or sign in to create an offer.'
     end
   end
+
 
   def create
     @offer = Offer.new(offer_params)

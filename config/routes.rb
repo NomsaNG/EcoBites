@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:create]
   end
   resources :orders, only: [:index, :show, :destroy]
+
+  get "map", to: "pages#map"
 end
