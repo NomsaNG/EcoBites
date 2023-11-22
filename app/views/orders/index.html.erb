@@ -2,12 +2,12 @@
   <h1>Your orders</h1>
   <% @orders.each do |order| %>
     <div class="card">
-    <p>Order: <%= @order.offer.title %></p>
-    <p>Shop: <%= @order.offer.shop %></p>
-    <p>Price: <%= number_to_currency(@order.offer.unit_price) %></p>
-    <p>Order date: <%= @order.offer.created_at %></p>
-    <p>Delivery date: <%= @order.offer.pickup_time_end %></p>
-    <p>Quantity: <%= @order.quantity %></p>
+    <p>Order: <%= order.offer.title %></p>
+    <p>Shop: <%= order.offer.shop %></p>
+    <p>Price: <%= number_to_currency(order.offer.unit_price) %></p>
+    <p>Order date: <%= order.offer.created_at %></p>
+    <p>Delivery date: <%= order.offer.pickup_time_end %></p>
+    <p>Quantity: <%= order.quantity %></p>
     </div>
   <% end %>
     <%= link_to "Back to shopping", "/offers", class: "btn btn-primary"%>
