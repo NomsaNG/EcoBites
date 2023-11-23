@@ -72,8 +72,8 @@ fresh_waffles = Offer.new(
   unit_price: 11.49,
   user: user2,
   pickup_instructions: "Pick up your waffle platter at the waffle station",
-  pickup_time_start: Time.parse("2:30 PM"),
-  pickup_time_end: Time.parse("4:30 PM"),
+  pickup_time_start: Time.parse("2:00 PM"),
+  pickup_time_end: Time.parse("4:00 PM"),
   hotdeals: true
 )
 
@@ -145,7 +145,7 @@ gatsu = Offer.new(
   user: user6,
   pickup_instructions: "Please pick up at counter at given time",
   pickup_time_start: Time.parse("5:00 PM"),
-  pickup_time_end: Time.parse("6:30 PM"),
+  pickup_time_end: Time.parse("6:00 PM"),
   hotdeals: true
 )
 
@@ -198,8 +198,8 @@ fresh_salads = Offer.new(
   unit_price: 6.99,
   user: user9,
   pickup_instructions: "Pick up your salad box near the entrance",
-  pickup_time_start: Time.parse("11:30 AM"),
-  pickup_time_end: Time.parse("1:30 PM"),
+  pickup_time_start: Time.parse("11:00 AM"),
+  pickup_time_end: Time.parse("1:00 PM"),
   hotdeals: false
 )
 
@@ -234,8 +234,8 @@ fresh_juices = Offer.new(
   unit_price: 5.99,
   user: user11,
   pickup_instructions: "Grab your juice pack at the juice bar",
-  pickup_time_start: Time.parse("4:30 PM"),
-  pickup_time_end: Time.parse("6:30 PM"),
+  pickup_time_start: Time.parse("4:00 PM"),
+  pickup_time_end: Time.parse("6:00 PM"),
   hotdeals: false
 )
 
@@ -270,8 +270,8 @@ healthy_bowls = Offer.new(
   unit_price: 11.99,
   user: user13,
   pickup_instructions: "Collect your superfood bowl combo near the entrance",
-  pickup_time_start: Time.parse("12:30 PM"),
-  pickup_time_end: Time.parse("2:30 PM"),
+  pickup_time_start: Time.parse("12:00 PM"),
+  pickup_time_end: Time.parse("2:00 PM"),
   hotdeals: false
 )
 
@@ -288,8 +288,8 @@ fruit_paradise = Offer.new(
   unit_price: 8.49,
   user: user14,
   pickup_instructions: "Pick up your fruit basket at the fruit stand",
-  pickup_time_start: Time.parse("3:30 PM"),
-  pickup_time_end: Time.parse("5:30 PM"),
+  pickup_time_start: Time.parse("3:00 PM"),
+  pickup_time_end: Time.parse("5:00 PM"),
   hotdeals: false
 )
 
@@ -306,7 +306,7 @@ coffee_lovers = Offer.new(
   unit_price: 15.99,
   user: user15,
   pickup_instructions: "Grab your coffee pack at the coffee counter",
-  pickup_time_start: Time.parse("7:30 AM"),
+  pickup_time_start: Time.parse("7:00 AM"),
   pickup_time_end: Time.parse("9:00 AM"),
   hotdeals: false
 )
@@ -344,8 +344,8 @@ authentic_tacos = Offer.new(
   unit_price: 9.99,
   user: user17,
   pickup_instructions: "Grab your authentic tacos at the taco stand",
-  pickup_time_start: Time.parse("6:30 PM"),
-  pickup_time_end: Time.parse("8:30 PM"),
+  pickup_time_start: Time.parse("6:00 PM"),
+  pickup_time_end: Time.parse("8:00 PM"),
   hotdeals: false
 )
 
