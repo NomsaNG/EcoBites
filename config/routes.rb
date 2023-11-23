@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:create]
   end
   resources :orders, only: [:index, :show, :destroy]
+  resource :user, only: [:show]
 
   get "map", to: "pages#map"
 end

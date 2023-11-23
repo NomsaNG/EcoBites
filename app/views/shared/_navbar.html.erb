@@ -10,10 +10,9 @@
     </a>
     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="avatarToggle">
       <% if user_signed_in? %>
-        <li><%= link_to "Profile", new_user_session_path, class: "dropdown-item" %></li>
+        <li><%= link_to "Profile", "/user", class: "dropdown-item" %></li>
         <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Create an offer", new_offer_path, class: "dropdown-item" %></li>
-        <li><%= link_to "My orders", orders_path, class: "dropdown-item" %></li>
         <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
       <% else %>
         <li><%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %></li>
