@@ -9,4 +9,12 @@ class Offer < ApplicationRecord
   validates :pickup_instructions, presence: true
   validates :title, presence: true
   validates :shop, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_offer,
+  against: [:title, :description],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
 end

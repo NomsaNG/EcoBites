@@ -4,6 +4,15 @@
       <h4>EcoBites</h4>
     <% end %>
   </div>
+      <div class="search-box">
+        <div class=".col-md-6 ">
+            <%= form_with url: root_path, method: :get, class: "d-flex align-items-baseline" do %>
+                <%= text_field_tag :query, params[:query], class: "form-control form-control-sm search-input", placeholder: "Search" %>
+              <%= submit_tag "Go", name: "", class: "btn btn-primary btn-sm search-button ml-2" %>
+            <% end %>
+          </div>
+      </div>
+
   <div class="dropdown">
     <a href="#" class="avatar-toggle" id="avatarToggle">
       <img src="https://png.pngtree.com/png-clipart/20190619/original/pngtree-vector-avatar-icon-png-image_4013519.jpg" class="avatar">
