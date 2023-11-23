@@ -1,54 +1,27 @@
-
-<!--<div class="navbar">
-  <div class="nav-logo">
-    <i class="fa fa-cutlery" aria-hidden="true"> EcoBites</i>
-  </div>
-  <div class="nav-icons">
-    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-    <div class="dropdown">
-      <a href="#" class="avatar-toggle" id="avatarToggle">
-        <img src="https://png.pngtree.com/png-clipart/20190619/original/pngtree-vector-avatar-icon-png-image_4013519.jpg" class="avatar">
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu" aria-labelledby="avatarToggle">
-        <li><a class="dropdown-item" href="#"> <img src="../../assets/images/profile.png"> <p>Profile</p></a></li>
-        <li><hr class="dropdown-divider"></li>
--->        <!--<li><a class="dropdown-item active" href="#">Settings and Privacy</a></li> --> <!--replace with my orders link -->
-        <!--<li><a class="dropdown-item" href="#">Help</a></li> -->  <!-- replace with map link -->
-       <!-- <li><a class="dropdown-item" href="#">Login</a></li> -->  <!-- sign out -->
-    <!--  </ul>
-    </div>
-  </div>
-</div>
-<script>
-  // Using JavaScript
-  document.getElementById('avatarToggle').addEventListener('click', function () {
-    document.querySelector('.dropdown-menu').classList.toggle('show');
-  });
-</script>-->
-
 <div class="navbar">
   <div class="nav-logo">
-    <%= link_to new_user_session_path, class: "fa fa-cutlery" do %>
-      EcoBites
+    <%= link_to root_path do %>
+      <h4>EcoBites</h4>
     <% end %>
   </div>
-    <div class="dropdown">
-      <a href="#" class="avatar-toggle" id="avatarToggle">
-        <img src="https://png.pngtree.com/png-clipart/20190619/original/pngtree-vector-avatar-icon-png-image_4013519.jpg" class="avatar">
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="avatarToggle">
-        <% if user_signed_in? %>
-          <li><%= link_to "Profile", new_user_session_path %></li>
-          <li><hr class="dropdown-divider"></li>
-          <!--<li><%#= link_to "Settings and Privacy", settings_and_privacy_path %></li>
-          <li><%#= link_to "Help", help_path %></li>-->
-          <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
-        <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %></li>
-          <li><%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="dropdown">
+    <a href="#" class="avatar-toggle" id="avatarToggle">
+      <img src="https://png.pngtree.com/png-clipart/20190619/original/pngtree-vector-avatar-icon-png-image_4013519.jpg" class="avatar">
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="avatarToggle">
+      <% if user_signed_in? %>
+        <li><%= link_to "Profile", new_user_session_path, class: "dropdown-item" %></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><%= link_to "Create an offer", new_offer_path, class: "dropdown-item" %></li>
+        <li><%= link_to "My orders", orders_path, class: "dropdown-item" %></li>
+        <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+      <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %></li>
+        <li><%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %></li>
+      <% end %>
+      <li><%= link_to "Go to Map", map_path, class: "dropdown-item" %></li>
+    </ul>
+  </div>
 </div>
 
 <script>
