@@ -19,23 +19,32 @@
     </a>
     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="avatarToggle">
       <% if user_signed_in? %>
-        <li><%= link_to "Profile", new_user_session_path, class: "dropdown-item" %></li>
+        <li><%= link_to "Profile", "/user", class: "dropdown-item" %></li>
         <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Create an offer", new_offer_path, class: "dropdown-item" %></li>
-        <li><%= link_to "My orders", orders_path, class: "dropdown-item" %></li>
         <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
       <% else %>
         <li><%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %></li>
         <li><%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %></li>
       <% end %>
-      <li><%= link_to "Go to Map", map_path, class: "dropdown-item" %></li>
+      <!--<li><%#= link_to "Go to Map", map_path, class: "dropdown-item" %></li>-->
     </ul>
   </div>
 </div>
 
 <script>
-  // Using JavaScript
-  document.getElementById('avatarToggle').addEventListener('click', function () {
-    document.querySelector('.dropdown-menu').classList.toggle('show');
+  document.getElementById('avatarToggle').addEventListener('click', function (event) {
+    event.stopPropagation(); // Prevent the click event from propagating to the document
+
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    dropdownMenu.classList.toggle('show');
+  });
+
+  // Close the dropdown when clicking outside of it
+  document.addEventListener('click', function () {
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    if (dropdownMenu.classList.contains('show')) {
+      dropdownMenu.classList.remove('show');
+    }
   });
 </script>

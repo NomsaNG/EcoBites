@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="text-center">
+    <h1>Your Details</h1>
+    <div class="card-profile">
+      <p><strong>Email:</strong> <%= @user.email %></p>
+      <p><strong>Address:</strong> <%= @user.address %></p>
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+  <h1 class="mb-4">Your Orders</h1>
+
+  <div class="container">
+    <% @orders.each do |order| %>
+      <div class="mb-4" style="box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1)">
+          <div class="text-center">
+          <h5 class="card-title"><strong>Order:</strong> <%= order.offer.title %></h5>
+          <p class="card-text"><strong>Shop:</strong> <%= order.offer.shop %></p>
+          <p class="card-text"><strong>Price:</strong> <%= number_to_currency(order.offer.unit_price) %></p>
+          <p class="card-text"><strong>Order date:</strong> <%= order.offer.created_at %></p>
+          <p class="card-text"><strong>Delivery date:</strong> <%= order.offer.pickup_time_end %></p>
+          <p class="card-text"><strong>Quantity:</strong> <%= order.quantity %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Back to Shopping", new_user_session_path, class: "btn btn-primary mt-4", style: "width: 100%;" %>
+</div>

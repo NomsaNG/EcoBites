@@ -10,16 +10,22 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # I will need to know who the user is to link the new order to him/her
     @offer = Offer.find(params[:offer_id])
-    @order = Order.new(order_params)
-    @order.offer = @offer
-    @order.user = current_user
 
-    if @order.save
-      redirect_to root_path, notice: "Order successfully created."
+    if current_user.nil?
+      redirect_to new_user_session_path, alert: "Please sign in to place an order."
     else
-      render 'offers/show', alert: "Failed to create order."
+      @order = Order.new(order_params)
+      @order.offer = @offer
+      @order.user = current_user
+
+      if @order.quantity.nil?
+        redirect_to offer_path(@offer), alert: "Please select a quantity."
+      elsif @order.save
+        redirect_to root_path, notice: "Order successfully created."
+      else
+        render 'offers/show', alert: "Failed to create order."
+      end
     end
   end
 
