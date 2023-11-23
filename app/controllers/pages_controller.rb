@@ -1,6 +1,11 @@
 class PagesController < ApplicationController
   def home
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.search_by_offer(params[:query])
+      @test = 1
+    else
+      @offers = Offer.all
+    end
     @markers = []
 
     @offers.each do |offer|
