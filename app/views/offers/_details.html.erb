@@ -1,21 +1,20 @@
-<section class="container" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); padding: 10px; margin-top: 5px; border-radius: 5px; background-color: #F9F9F9;">
-  <div class="row justify-content-center">
-      <article class="col-md-6 col-lg-4">
-          <header>
-              <h1><%= offer.shop %></h1>
-          </header>
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Offer image for <%= offer.title %>" class="img-fluid rounded-lg large-image" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); border-radius: 5px; margin-bottom: 15px;">
-          <h3 class="offer-title mt-3"><%= offer.title %></h3>
-          <p class="offer-description"><%= offer.description %></p>
-          <p class="offer-description">Address: <%= offer.user.address %></p>
-          <p class="offer-price">Price: <%= offer.unit_price %></p>
+<div class="custom-container mx-auto mb-5 pt-0 pb-0 d-flex align-items-center" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); padding: 20px; margin-top: 5px; border-radius: 5px; background-color: #F9F9F9; width: 450px; display: flex; justify-content: center; flex-direction: column; border-radius: 9px">
+  <div class="sub-container mb-0 pb-0" style="width:400px">
+    <div class="p-4">
+      <div class="row justify-content-center mx-auto">
+        <h1 class="mt-0" style="font-size: 32px"><strong><%= offer.shop %></strong></h1>
+        <%= image_tag offer.photo, style: "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); border-radius: 5px; margin-bottom: 6px; width: 330px; height: 260px; object-fit: cover; padding: 0px" %>
+        <h3 class="offer-title mt-1 mb-1" style="font-size: 22px"><strong><%= offer.title %></strong></h3>
+        <p class="offer-description mb-1"><%= offer.description %></p>
+        <p class="offer-description mb-1"><strong>Address: </strong><%= offer.user.address %></p>
+        <p class="offer-price mb-1"><strong> Price: </strong><%= offer.unit_price %></p>
+        <p class="mt-2"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %>H</strong></p>
 
-          <p class="mt-2"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %>H</strong></p>
-          
-          <%= simple_form_for [offer, order] do |f| %>
-            <%= f.input :quantity, as: :select, collection: 1..10, prompt: "Select quantity" %>
-            <%= f.submit "Reserve this offer", class: "btn btn-primary" %>
-          <% end %>
-      </article>
+        <%= simple_form_for [offer, order], wrapper: :horizontal_form do |f| %>
+          <%= f.input :quantity, as: :select, collection: 1..10, prompt: "Select quantity", label: false %>
+          <%= f.submit "Reserve this offer", class: "btn btn-primary ml-2" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</section>
+</div>
