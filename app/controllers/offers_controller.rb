@@ -3,7 +3,11 @@ class OffersController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.search_by_offer(params[:query])
+    else
+      @offers = Offer.all
+    end
   end
 
   def show
@@ -34,6 +38,7 @@ class OffersController < ApplicationController
     end
   end
 
+end
   private
 
   def offer_params
@@ -43,4 +48,3 @@ class OffersController < ApplicationController
   def set_offer
     @offer = Offer.find(params[:id])
   end
-end

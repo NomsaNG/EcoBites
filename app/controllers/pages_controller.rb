@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
   def home
-      @offers = Offer.all
+      if params[:query].present?
+        @offers = Offer.search_by_offer(params[:query])
+      else
+        @offers = Offer.all
+      end
   end
 
   def map
