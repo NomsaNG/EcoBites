@@ -9,9 +9,8 @@
       <%= image_tag offer.photo, class: "img-fluid rounded-lg", style: "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); border-radius: 5px; margin-bottom: 4px; width: 340px; height: 270px; object-fit: cover" %>
       <h3 class="offer-title mt-1 mb-2" style = "font-size: 23px"><strong> <%= offer.title %> </strong> </h3>
       <p class="offer-description mb-1"><%= offer.description %></p>
-      <p class="offer-description mb-1"> <strong >Address: </strong> <%= offer.user.address %></p>
       <p class="offer-price mb-1"> <strong> Price: </strong> <%= offer.unit_price %></p>
-      <p class="mt-2"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %>H</strong></p>
+      <p class="mt-2 mb-0"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %>H</strong></p>
       <%= link_to "View details", offer_path(offer)%>
     </div>
   </div>
