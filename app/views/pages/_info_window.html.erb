@@ -1,25 +1,18 @@
 <%#= render 'app/views/offers/_details.html.erb', offer: @offer %>
 
 
-<section class="container" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); padding: 10px; margin-top: 5px; border-radius: 5px; background-color: #F9F9F9;">
-  <div class="row justify-content-center">
-      <article class="col-md-6 col-lg-4">
-          <header>
-              <h1><%= offer.shop %></h1>
-          </header>
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Offer image for <%= offer.title %>" class="img-fluid rounded-lg large-image" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); border-radius: 5px; margin-bottom: 15px;">
-          <h3 class="offer-title mt-3"><%= offer.title %></h3>
-          <p class="offer-description"><%= offer.description %></p>
-          <p class="offer-description">Address: <%= offer.user.address %></p>
-          <p class="offer-price">Price: <%= offer.unit_price %></p>
-          <form>
-              <fieldset class="quantity-container">
-                  <label for="quantity" class="mt-2">Quantity:</label>
-                  <input type="number" id="quantity" name="quantity" class="form-control" min="1" max="10" value="1">
-                  <p class="mt-2"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %>H</strong></p>
-              </fieldset>
-              <button type="submit" class="btn btn-primary btn-block mt-3 reserve-button">Confirm</button>
-          </form>
-      </article>
+
+<div class="mx-auto" style="padding: 1px; margin-top: 2px; display: flex; justify-content: center; flex-direction: column; border-radius: 9px; overflow: auto;">
+  <div class="p-1">
+    <div class="row justify-content-center">
+      <h1 style="font-size: 28px" > <strong> <%= offer.shop %> </strong> </h1>
+      <%= image_tag offer.photo, class: "img-fluid rounded-lg", style: "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); border-radius: 5px; margin-bottom: 4px; width: 340px; height: 270px; object-fit: cover" %>
+      <h3 class="offer-title mt-1 mb-2" style = "font-size: 23px"><strong> <%= offer.title %> </strong> </h3>
+      <p class="offer-description mb-1"><%= offer.description %></p>
+      <p class="offer-description mb-1"> <strong >Address: </strong> <%= offer.user.address %></p>
+      <p class="offer-price mb-1"> <strong> Price: </strong> <%= offer.unit_price %></p>
+      <p class="mt-2"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %>H</strong></p>
+      <%= link_to "View details", offer_path(offer)%>
+    </div>
   </div>
-</section>
+</div>
