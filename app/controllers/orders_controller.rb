@@ -7,15 +7,20 @@ class OrdersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:offer_id])
-    @order = Order.new
   end
 
   def create
     # I will need to know who the user is to link the new order to him/her
+    @offer = Offer.find(params[:offer_id])
     @order = Order.new(order_params)
-    @order.offer = Offer.find(params[:offer_id])
-    @order.save
-    redirect_to root_path
+    @order.offer = @offer
+    @order.user = current_user
+
+    if @order.save
+      redirect_to root_path, notice: "Order successfully created."
+    else
+      render 'offers/show', alert: "Failed to create order."
+    end
   end
 
   def destroy

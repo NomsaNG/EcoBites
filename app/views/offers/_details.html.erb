@@ -9,14 +9,13 @@
           <p class="offer-description"><%= offer.description %></p>
           <p class="offer-description">Address: <%= offer.user.address %></p>
           <p class="offer-price">Price: <%= offer.unit_price %></p>
-          <form>
-              <fieldset class="quantity-container">
-                  <label for="quantity" class="mt-2">Quantity:</label>
-                  <input type="number" id="quantity" name="quantity" class="form-control" min="1" max="10" value="1">
-                  <p class="mt-2"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %>H</strong></p>
-              </fieldset>
-              <button type="submit" class="btn btn-primary btn-block mt-3 reserve-button">Confirm</button>
-          </form>
+
+          <p class="mt-2"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %>H</strong></p>
+          
+          <%= simple_form_for [offer, order] do |f| %>
+            <%= f.input :quantity, as: :select, collection: 1..10, prompt: "Select quantity" %>
+            <%= f.submit "Reserve this offer", class: "btn btn-primary" %>
+          <% end %>
       </article>
   </div>
 </section>
