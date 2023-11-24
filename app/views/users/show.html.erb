@@ -9,22 +9,41 @@
 
   <hr class="my-4">
 
-  <h1 class="mb-4">Your Orders</h1>
-
   <div class="container">
-    <% @orders.each do |order| %>
-      <div class="mb-4" style="box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1)">
+    <% if current_user.offers.any? %>
+      <h3 class="mb-4 text-center"><strong>Your Offers</strong></h3>
+      <% @offers.order(created_at: :desc).each do |offer| %>
+        <div class="mb-4" style="box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1)">
           <div class="text-center">
-          <h5 class="card-title"><strong>Order:</strong> <%= order.offer.title %></h5>
-          <p class="card-text"><strong>Shop:</strong> <%= order.offer.shop %></p>
-          <p class="card-text"><strong>Price:</strong> <%= number_to_currency(order.offer.unit_price) %></p>
-          <p class="card-text"><strong>Order date:</strong> <%= order.offer.created_at %></p>
-          <p class="card-text"><strong>Delivery date:</strong> <%= order.offer.pickup_time_end %></p>
-          <p class="card-text"><strong>Quantity:</strong> <%= order.quantity %></p>
+            <p class="card-text"><strong>Title:</strong> <%= offer.title %></p>
+            <p class="card-text"><strong>Description:</strong> <%= offer.description %></p>
+            <p class="card-text"><strong>Quantity remaining:</strong> <%= offer.quantity %></p>
+            <p class="card-text"><strong>Number of orders:</strong> <%= offer.orders.count %></p>
+            <p class="card-text"><strong>Quantities ordered:</strong> <%= offer.orders.sum(:quantity) %></p>
+            <p class="card-text"><strong>Pickup time start:</strong> <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
+      <br>
+      <br>
     <% end %>
-  </div>
 
-  <%= link_to "Back to Shopping", new_user_session_path, class: "btn btn-primary mt-4", style: "width: 100%;" %>
+    <% if current_user.orders.any? %>
+      <h3 class="mb-4 text-center"><strong>Your Orders</strong></h3>
+      <% @orders.order(created_at: :desc).each do |order| %>
+        <div class="mb-4" style="box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1)">
+          <div class="text-center">
+            <h5 class="card-title"><strong>Order:</strong> <%= order.offer.title %></h5>
+            <p class="card-text"><strong>Shop:</strong> <%= order.offer.shop %></p>
+            <p class="card-text"><strong>Price:</strong> <%= number_to_currency(order.offer.unit_price) %></p>
+            <p class="card-text"><strong>Order date:</strong> <%= order.offer.created_at %></p>
+            <p class="card-text"><strong>Delivery date:</strong> <%= order.offer.pickup_time_end %></p>
+            <p class="card-text"><strong>Quantity:</strong> <%= order.quantity %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <%= link_to "Back to Shopping", new_user_session_path, class: "btn btn-primary mt-4", style: "width: 15%;" %>
+  </div>
 </div>

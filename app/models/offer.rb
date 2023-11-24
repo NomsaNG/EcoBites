@@ -1,6 +1,7 @@
 class Offer < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
+  has_many :orders, dependent: :destroy
   validates :description, presence: true
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :unit_price, presence: true, numericality: { greater_than: 0 }

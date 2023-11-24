@@ -21,8 +21,12 @@ class OrdersController < ApplicationController
 
       if @order.quantity.nil?
         redirect_to offer_path(@offer), alert: "Please select a quantity."
+      elsif @order.quantity > @offer.quantity
+        redirect_to offer_path(@offer), alert: "Apologies, there are only #{@offer.quantity} left."
       elsif @order.save
-        redirect_to root_path, notice: "Order successfully created."
+        @offer.quantity = @offer.quantity - @order.quantity
+        @offer.save
+        redirect_to user_path, notice: "Order successfully created."
       else
         render 'offers/show', alert: "Failed to create order."
       end
