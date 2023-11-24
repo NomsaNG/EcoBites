@@ -8,7 +8,8 @@
         <p class="offer-description mb-1"><%= offer.description %></p>
         <p class="offer-description mb-1"><strong>Address: </strong><%= offer.user.address %></p>
         <p class="offer-price mb-1"><strong> Price: </strong><%= offer.unit_price %></p>
-        <p class="mt-2"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %>H</strong></p>
+        <p class="offer-price mb-1"><strong> Stock: </strong><%= offer.quantity %></p>
+        <p class="mt-2"><strong>Pick up time starts at <%= offer.pickup_time_start.hour %> :0<%= offer.pickup_time_start.min %></strong></p>
 
         <%= simple_form_for [offer, order], wrapper: :horizontal_form do |f| %>
           <%= f.input :quantity, as: :select, collection: 1..10, prompt: "Select quantity", label: false %>

@@ -31,6 +31,9 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
+    if !@offer.photo.attached?
+      redirect_to new_offer_path, notice: 'Please upload an image'
+    end
     if @offer.save
       redirect_to root_path, notice: 'Offer was successfully created.'
     else

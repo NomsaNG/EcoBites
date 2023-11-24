@@ -1,26 +1,3 @@
-<!--<div class="form-body">
-
-
-  <div class="form-container">
-    <%#= simple_form_for(@offer) do |f| %>-->
-      <%#= f.input :shop %>
-      <%#= f.input :title %>
-      <%#= f.input :description %>
-<!--      <div style="display: flex; justify-content: space-between;">-->
-        <%#= f.input :quantity, as: :integer %>
-        <%#= f.input :unit_price, as: :float %>
-<!--      </div>-->
-      <%#= f.input :pickup_instructions %>
-      <%#= f.input :pickup_time_start, as: :time %>
-      <%#= f.input :pickup_time_end, as: :time %>
-      <%#= f.input :photo, as: :file %>
-      <%#= f.submit class: "form-button"%>
-    <%# end %>
-<!--
-  </div>
-
-</div>-->
-
 <div class="form-container" style="width: 500px; margin: auto;">
     <%= simple_form_for(@offer, html: { class: 'offer-form' }) do |f| %>
       <h2>Create an Offer</h2>
