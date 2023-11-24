@@ -37,7 +37,7 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to root_path, notice: 'Offer was successfully created.'
     else
-      render :new
+      puts "please upload picture"
     end
   end
 
