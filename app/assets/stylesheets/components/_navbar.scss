@@ -54,5 +54,25 @@ h4 {
   margin-right: 50px;
 }
 .search-box {
-  margin-left: 1000px;
+  margin-left: 800px;
+}
+
+.notification {
+  background-color: #333366;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification .badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
 }
