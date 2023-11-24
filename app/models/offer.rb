@@ -10,6 +10,7 @@ class Offer < ApplicationRecord
   validates :pickup_instructions, presence: true
   validates :title, presence: true
   validates :shop, presence: true
+  validates :photo, presence: true
 
   include PgSearch::Model
   pg_search_scope :search_by_offer,

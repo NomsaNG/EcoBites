@@ -4,21 +4,8 @@
       <h4>EcoBites</h4>
     <% end %>
   </div>
-<!--<div class="search">
-            <form action="#">
-                <input type="text"
-                       placeholder=" Search Courses"
-                       name="search">
-                <button>
-                    <i class="fa fa-search"
-                       style="font-size: 18px;">
-                    </i>
-                </button>
-            </form>
-        </div>
-</div>-->
 
-  <div class="search-box d-flex justify-content-end ml-auto mr-5 mr-md-8"> <!-- Adjust margin as needed -->
+  <div class="search-box d-flex justify-content-end ml-auto mr-5 mr-md-8">
     <%= form_with url: root_path, method: :get, class: "d-flex align-items-center" do %>
       <%= text_field_tag :query, params[:query], class: "form-control form-control-sm search-input", placeholder: "Search" %>
         <%= submit_tag "Go", name: "", class: "btn btn-primary btn-sm search-button ml-2 d-flex align-items-center justify-content-center" %>
@@ -35,7 +22,7 @@
 
   <div class="dropdown">
     <a href="#" class="avatar-toggle" id="avatarToggle">
-      <img src="https://png.pngtree.com/png-clipart/20190619/original/pngtree-vector-avatar-icon-png-image_4013519.jpg" class="avatar">
+      <i class="fa fa-user" aria-hidden="true"></i>
     </a>
     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="avatarToggle">
       <% if user_signed_in? %>
