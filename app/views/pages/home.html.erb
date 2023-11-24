@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row mt-0">
-    <div class="col-6">
+    <div class="col-7">
 
       <h2 class="mt-4">Hot deals <i class="fas fa-fire"></i></h2>
       <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
@@ -12,12 +12,13 @@
                   <div class="wrapper">
                     <%= image_tag(offer.photo.url, class: 'card-img-top', alt: 'Card image cap') if offer.photo.attached? %>
                   </div>
-                    <div class="d-flex justify-evenly align-items-center">
-                      <div class="card-body mx-2">
-                        <h5 class="card-title"><strong><%= offer.shop %></strong></h5>
-                          <h5 class="card-title"><%= offer.title %></h5>
-                          <p class="card-text ">Price: <%= number_to_currency(offer.unit_price) %></p>
-                      </div>
+                  <div class="d-flex justify-evenly align-items-center">
+                    <div class="card-body mx-2">
+                      <h5 class="card-title"><strong><%= offer.shop %></strong></h5>
+                        <h5 class="card-title"><%= offer.title %></h5>
+                        <p class="card-text ">Price: <%= number_to_currency(offer.unit_price) %></p>
+
+                    </div>
                       <%= link_to "View", offer_path(offer), class: "bttn btn-primary m-2" %>
                     </div>
                 </div>
@@ -36,6 +37,8 @@
         </a>
 
       </div>
+
+      <h2> All offers</h2>
       <div class="row">
         <div class="grid-container col-6 p-0">
               <% @offers.each_with_index do |offer, index| %>

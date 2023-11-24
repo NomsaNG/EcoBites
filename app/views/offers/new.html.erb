@@ -1,14 +1,78 @@
-<div class="container" style="width: 500px;">
-  <%= simple_form_for(@offer) do |f| %>
-    <%= f.input :shop %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :quantity, as: :integer %>
-    <%= f.input :unit_price, as: :float %>
-    <%= f.input :pickup_instructions %>
-    <%= f.input :pickup_time_start, as: :time %>
-    <%= f.input :pickup_time_end, as: :time %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+<!--<div class="form-body">
+
+
+  <div class="form-container">
+    <%#= simple_form_for(@offer) do |f| %>-->
+      <%#= f.input :shop %>
+      <%#= f.input :title %>
+      <%#= f.input :description %>
+<!--      <div style="display: flex; justify-content: space-between;">-->
+        <%#= f.input :quantity, as: :integer %>
+        <%#= f.input :unit_price, as: :float %>
+<!--      </div>-->
+      <%#= f.input :pickup_instructions %>
+      <%#= f.input :pickup_time_start, as: :time %>
+      <%#= f.input :pickup_time_end, as: :time %>
+      <%#= f.input :photo, as: :file %>
+      <%#= f.submit class: "form-button"%>
+    <%# end %>
+<!--
+  </div>
+
+</div>-->
+
+<div class="form-container" style="width: 500px; margin: auto;">
+    <%= simple_form_for(@offer, html: { class: 'offer-form' }) do |f| %>
+      <h2>Create an Offer</h2>
+
+      <%= f.input :shop, label: 'Shop Name', required: true %>
+      <%= f.input :title, label: 'Offer Title', required: true %>
+      <%= f.input :description, label: 'Description', as: :text, required: true %>
+      <%= f.input :quantity, label: 'Quantity', as: :integer, required: true %>
+      <%= f.input :unit_price, label: 'Unit Price', as: :float, required: true %>
+      <%= f.input :pickup_instructions, label: 'Pickup Instructions', as: :text, required: true %>
+
+      <div class="form-group">
+        <label>Pickup Time</label>
+        <div class="row">
+          <div class="col">
+            <%= f.input :pickup_time_start, label: 'Start Time', as: :time, required: true, input_html: { class: 'form-control' } %>
+          </div>
+          <div class="col">
+            <%= f.input :pickup_time_end, label: 'End Time', as: :time, required: true, input_html: { class: 'form-control' } %>
+          </div>
+        </div>
+      </div>
+
+      <%= f.input :photo, label: 'Upload Photo', as: :file %>
+
+      <div class="form-actions">
+        <%= f.submit 'Create Offer', class: 'form-button btn-primary' %>
+      </div>
+    <% end %>
 </div>
+
+<script>
+  $(document).ready(function() {
+    $('.offer-form').submit(function(event) {
+      var formValid = true;
+
+      // Check each required input
+      $('.offer-form [required]').each(function() {
+        if ($(this).val().trim() === '') {
+          formValid = false;
+          $(this).addClass('error');
+        } else {
+          $(this).removeClass('error');
+        }
+      });
+
+      // If any required field is empty, prevent form submission
+      if (!formValid) {
+        event.preventDefault();
+        alert('Please fill in all required fields.');
+        // You can customize the alert or use a different UI element.
+      }
+    });
+  });
+</script>
