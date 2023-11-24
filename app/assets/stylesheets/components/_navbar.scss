@@ -48,5 +48,52 @@ h4 {
   font-size: 30px;
 }
 .search-box {
-  margin-left: 1000px; 
+  margin-left: 800px;
+}
+
+// .notification:hover {
+//   background: #666; /* Slightly darker on hover */
+// }
+
+.notification {
+  background-color: #333366;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification .badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+
+.notification .fa-solid {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+// Path: app/assets/stylesheets/components/_footer.scss
+.footer {
+  background: #333366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #f2f2f2;
 }
