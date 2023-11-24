@@ -7,37 +7,46 @@
   z-index: 1000;
 }
 
-.nav-links{
+.nav-links {
   justify-content: space-between;
 }
+
 .nav-logo {
   display: flex;
 }
-.nav-logo,.nav-icons{
+
+.nav-logo,
+.nav-icons {
   color: white;
   opacity: 0.9;
   text-decoration: none;
   font-size: 24px;
 }
+
 .navbar-ecobites .navbar-brand img {
   width: 40px;
 }
 
-.nav-logo:hover,.nav-icons:hover {
+.nav-logo:hover,
+.nav-icons:hover {
   opacity: 1;
 }
 
-.dropdown{
+.dropdown {
   margin-right: 100px;
 }
 
-.nav-logo a{
+.nav-logo a {
   text-decoration: none;
   padding-left: 20px;
 }
 
-h4{
+h4 {
   font-family: 'Ephesis', cursive;
   color: white;
+
   font-size: 30px;
+}
+.search-box {
+  margin-left: 1000px; 
 }
