@@ -13,6 +13,7 @@ eagerLoadControllersFrom("controllers", application)
 
 // Path: app/javascript/controllers/application.js
 
+// carousel controllers
 $(document).ready(function() {
   const itemWidth = $('.carousel-item').outerWidth(true);
 
@@ -30,3 +31,4 @@ $(document).ready(function() {
     }, 800);
   });
 });
+

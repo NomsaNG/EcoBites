@@ -31,13 +31,14 @@ h5, .card-text{
 
   .carousel-item{
     display: block;
-    margin-right: 0;
+    margin-right: 0px;
     flex: 0 0 calc(100%/3);
+    width: 250px;
   }
 }
 
 .carousel-inner{
-  padding: 1em;
+  padding: 5px;
   border-radius: 0;
 }
 
@@ -46,6 +47,10 @@ h5, .card-text{
   border-radius: 5px;
   box-shadow: 2px 2px 4px 0 rgb(85, 85, 85);
   width: 250px;
+}
+
+.card-body{
+  padding: 5px;
 }
 
 .carousel-control-prev, .carousel-control-next{
